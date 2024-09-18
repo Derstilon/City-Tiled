@@ -1,0 +1,17 @@
+{
+    "name": "city-tiled",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc",
+        "start": "npm run build && parcel index.html"
+    },
+    "keywords": [],
+    "author": "Derstilon",
+    "license": "GNU",
+    "description": "",
+    "devDependencies": {
+        "parcel": "^2.12.0"
+    }
+}
