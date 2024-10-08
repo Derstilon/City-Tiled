@@ -599,13 +599,27 @@ startGameBtn === null || startGameBtn === void 0 || startGameBtn.addEventListene
     const tile2 = new (0, _tile.Tile)([
         1
     ]);
+    const tile3 = new (0, _tile.Tile)([
+        2
+    ]);
+    const tile4 = new (0, _tile.Tile)([
+        3
+    ]);
     game.gameMap.data.put(tile1, [
-        0,
-        0
+        -2,
+        -2
     ]);
     game.gameMap.data.put(tile2, [
-        1,
-        1
+        2,
+        2
+    ]);
+    game.gameMap.data.put(tile3, [
+        -2,
+        2
+    ]);
+    game.gameMap.data.put(tile4, [
+        2,
+        -2
     ]);
 });
 
@@ -1539,17 +1553,14 @@ class Visuals {
     }
     set(key, value) {
         this._data.set(key, value);
-        const [x, y] = [
-            parseInt(key[0]),
-            parseInt(key[2])
-        ];
+        const [x, y] = key.split(",").map((v)=>parseInt(v));
         this.dataBounds[0] = [
             Math.min(this.dataBounds[0][0], x),
             Math.min(this.dataBounds[0][1], y)
         ];
         this.dataBounds[1] = [
-            Math.max(this.dataBounds[0][0], x),
-            Math.max(this.dataBounds[0][1], y)
+            Math.max(this.dataBounds[1][0], x),
+            Math.max(this.dataBounds[1][1], y)
         ];
     }
     get(key) {
