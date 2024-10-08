@@ -3,11 +3,13 @@
     "version": "1.0.0",
     "source": "/index.html",
     "scripts": {
-        "prebuild": "rmdir /s /q dist",
+        "clean": "if exist dist (rmdir /s /q dist)",
+        "prebuild": "npm run clean",
+        "prestart": "npm run clean",
         "build": "parcel build --public-url /City-Tiled/ --no-source-maps --no-scope-hoist",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist",
-        "start": "parcel  --no-source-maps --no-scope-hoist"
+        "start": "parcel  --no-source-maps"
     },
     "keywords": [],
     "author": "Derstilon",
@@ -18,5 +20,9 @@
         "gh-pages": "^6.1.1",
         "parcel": "^2.12.0",
         "typescript": "^5.6.2"
+    },
+    "dependencies": {
+        "city-tiled": "file:",
+        "typed-signals": "^3.0.0"
     }
 }
