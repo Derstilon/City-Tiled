@@ -1,1 +1,0 @@
-const t=document.getElementById("gameCanvas").getContext("2d");if(!t)throw Error("2d context not supported");t.font="48px serif",t.fillText("HELLO WORLD2",10,50);
