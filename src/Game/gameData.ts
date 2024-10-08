@@ -2,7 +2,7 @@ import { isMapTile, MapTile } from "../Tile/mapTile";
 import { Tile } from "../Tile/tile";
 
 export class GameData {
-    data;
+    data: Map<string, MapTile>;
     constructor() {
         this.data = new Map<string, MapTile>();
         console.log("Data created");
