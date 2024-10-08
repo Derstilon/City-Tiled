@@ -9,14 +9,14 @@ export class Visuals {
     }
     set(key: string, value: string) {
         this._data.set(key, value);
-        const [x, y] = [parseInt(key[0]), parseInt(key[2])];
+        const [x, y] = key.split(",").map((v) => parseInt(v));
         this.dataBounds[0] = [
             Math.min(this.dataBounds[0][0], x),
             Math.min(this.dataBounds[0][1], y),
         ];
         this.dataBounds[1] = [
-            Math.max(this.dataBounds[0][0], x),
-            Math.max(this.dataBounds[0][1], y),
+            Math.max(this.dataBounds[1][0], x),
+            Math.max(this.dataBounds[1][1], y),
         ];
     }
     get(key: string): string | undefined {
